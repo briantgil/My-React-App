@@ -7,8 +7,10 @@ export default function Home(){
     const card_data = ["This is some text within a card body."];
 
     const rows = [];
+    let j = 0;
     for (let i=0; i<row_count; i++){
-        rows.push(<CardRow columns={col_count} data={card_data} />);
+        rows.push(<CardRow id={"r"+i.toString()} columns={col_count} increment={j} data={card_data} />);
+        j += 3;
     }
 
     return (
